@@ -1,4 +1,4 @@
-class observer():
+class Observer():
     '''  '''
     def __init__(self):
         self.observers=[]
@@ -10,7 +10,7 @@ class observer():
     def remove_observer(self,observer):
         if observer in self.observers:
             self.observers.remove(observer)
-            
+
     def send_information(self,*args):
         for observer in self.observers:
             observer.update(args)
