@@ -11,7 +11,7 @@ class Observer():
         if observer in self.observers:
             self.observers.remove(observer)
 
-    def send_information(self,*args):
+    def send_information(self,args):
         for observer in self.observers:
             observer.update(args)
 

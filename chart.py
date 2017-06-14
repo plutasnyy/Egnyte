@@ -12,11 +12,8 @@ class First(Chart):
         self.number=0
         self.items=[]
 
-    def update(self,*args):
-        self.number+=1
-        self.items.append(args)
+    def update(self,args):
+        pass
 
     def print_chart(self):
-        print(self.items[1])
-        print(self.items[-1])
-        print(self.number)
+        pass
