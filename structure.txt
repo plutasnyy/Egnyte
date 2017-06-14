@@ -1,0 +1,22 @@
+{
+    "eventBody":
+                {
+                "action":"ADD_FOLDER",
+                "actionSource":"PLC",
+                "spaceUsed":0,
+                "targetCreationTime":null,
+                "targetFileChecksum":null,
+                "targetPostedTime":null,
+                "targetStorageType":null,
+                "userId":3.2912835029e+10
+                },
+
+    "eventHeader":
+                {
+                "eventCategory":"FILE_SYSTEM_EVENT",
+                "eventId":"df92188b-9857-42a7-8dd4-b2e3640e45da",
+                "timeStamp":1.428476519062e+12,
+                "userAgent":"Egnyte/8.0.1 (PLC; 102946; en_ZZ; Mac; 13.4.0; 32bit; )",
+                "workgroupID":"1867ee32-2f10-43f9-a6a1-446f3fb433cf"
+                }
+}   

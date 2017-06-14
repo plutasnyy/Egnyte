@@ -1,6 +1,6 @@
 import unittest
 
-from main_chart import *
+from chart_abstract import *
 from observer import *
 from data import *
 from chart import * #will remove in future

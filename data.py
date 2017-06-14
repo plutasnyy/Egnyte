@@ -11,7 +11,7 @@ class Data():
             self.observer=observer
 
     def read_data(self):
-        for j in range(0,34):
+        for j in range(0,1):
             for i in open('out/FSE_'+str(j), 'r'):
                 new_line=json.loads(i)
                 self.observer.send_information(new_line)
