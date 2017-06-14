@@ -1,8 +1,10 @@
 import unittest
 
-from chart import *
+from main_chart import *
 from observer import *
 from data import *
+from chart import * #will remove in future
+
 
 class Downloader():
     '''secondary class'''

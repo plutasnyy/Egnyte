@@ -1,5 +1,6 @@
 class Observer():
-    '''  '''
+    '''class responsible for downloading information for data and
+    transfer it to observers'''
     def __init__(self):
         self.observers=[]
 
