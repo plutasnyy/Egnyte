@@ -16,3 +16,12 @@ class Data():
                 new_line=json.loads(i)
                 self.observer.send_information(new_line)
         self.observer.send_finnally_information()
+
+    def return_json_file(self,url):
+        try:
+            temp=[]
+            data_file=open(url,'r')
+            for i in data_file:
+                temp.append(json.loads(i))
+            return temp
+        except: FileNotFoundError

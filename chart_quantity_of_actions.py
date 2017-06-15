@@ -1,8 +1,7 @@
 from chart_abstract import *
 import matplotlib.pyplot as plt
-import matplotlib.ticker as mticker
-import numpy as np
-class First(Chart):
+
+class Quantity_of_actions(Chart):
 
     def __init__(self):
         self.data_dict={}
@@ -17,7 +16,7 @@ class First(Chart):
         Y=[k for i,k in data]
         ind=range(1,len(X)+1)
 
-        plt.title("Wykres rzeczy")
+        plt.title("Quantity of actions")
         plt.bar(ind,Y,width=0.85, align='center')
         plt.xticks(ind, X, rotation='vertical')
         plt.margins(0.015)
@@ -28,4 +27,4 @@ class First(Chart):
         for x,y in zip(ind,Y):
             plt.text(x,y*1.5,y,ha='center',size='xx-small')
 
-        plt.savefig('lalala',dpi=300)
+        plt.savefig('Quantity of actions',dpi=300)

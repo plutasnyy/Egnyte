@@ -1,10 +1,10 @@
 import unittest
+import json
 
 from chart_abstract import *
 from observer import *
 from data import *
-from chart import * #will remove in future
-
+from chart_quantity_of_actions import *
 
 class Downloader():
     '''secondary class'''
@@ -78,26 +78,31 @@ class TestObserverClass(unittest.TestCase):
 
 class TestDataClass(unittest.TestCase):
     '''Tests for Data class'''
+    def setUp(self):
+        self.observer=Observer()
+        self.data=Data(self.observer)
+
     def test_wrong_initialization(self):
         self.assertRaises(SyntaxError,Data)
 
     def test_initialization(self):
-        observer=Observer()
-        data=Data(observer)
-        self.assertEqual(observer, data.observer)
+        self.assertEqual(self.observer, self.data.observer)
 
     def test_read_data_implement(self):
-        observer=Observer()
-        data=Data(observer)
-        self.assertTrue(hasattr(data,'read_data'))
-        '''functionality of this method will be checked later'''
+        self.assertTrue(hasattr(self.data,'read_data'))
+
+    def test_return_data_implement(self):
+        self.assertTrue(hasattr(self.data,'return_json_file'))
+
+    def test_return_data_excpt(self):
+        self.assertRaises(FileNotFoundError, self.data.return_json_file('lol'))
 
 
 class TestInheritance(unittest.TestCase):
     '''Good inheritance = Exception if functions arent definined'''
-    def test_First(self):
+    def test_chart_quantity_actions(self):
         self.assertTrue(
-            issubclass(First, Chart)
+            issubclass(Quantity_of_actions, Chart)
             )
 
 if __name__=="__main__":
