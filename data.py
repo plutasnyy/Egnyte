@@ -23,5 +23,6 @@ class Data():
             data_file=open(url,'r')
             for i in data_file:
                 temp.append(json.loads(i))
+            data_file.close()
             return temp
         except: FileNotFoundError
