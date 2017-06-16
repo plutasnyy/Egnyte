@@ -5,7 +5,120 @@ from observer import*
 
 
 class TestData(unittest.TestCase):
-    '''Tests for data -> the are very long'''
+    '''Tests for data -> are very long'''
+
+
+    '''all tests are in diffrent functions because requairments could change'''
+    def action_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split()
+        if len(arg) != 1:
+            print(arg)
+            return False
+        return True
+
+    def action_source_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split()
+        if len(arg) != 1:
+            print(arg)
+            return False
+        return True
+
+    def space_used_test(arg):
+        if isinstance(arg,(int,float))== False:
+            print(arg)
+            return False
+        return True
+
+    def target_creation_time_test(arg):
+        if isinstance(arg,(int,float))== False:
+            print(arg)
+            return False
+        return True
+
+    def target_file_check_sum_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split()
+        if len(arg) != 1:
+            print(arg)
+            return False
+        return True
+
+    def target_post_time_test(arg):
+        if arg is None:
+            return True
+        if isinstance(arg,(int,float))== False:
+            print(arg)
+            return False
+        return True
+
+    def target_storage_type_test(arg):
+        if arg is None:
+            return True
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split()
+        if len(arg) != 1:
+            print(arg)
+            return False
+        return True
+
+    def user_id_test(arg):
+        if isinstance(arg,(int,float))== False:
+            print(arg)
+            return False
+        return True
+
+    def event_category_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split()
+        if len(arg) != 1:
+            print(arg)
+            return False
+        return True
+
+    def event_id_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split('-')
+        if len(arg) != 5:
+            print(arg)
+            return False
+        return True
+
+    def time_stamp_test(arg):
+        if isinstance(arg,(int,float))== False:
+            print(arg)
+            return False
+        return True
+
+    def user_agent_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        return True
+
+    def work_group_id_test(arg):
+        if isinstance(arg,str)==False:
+            print(arg)
+            return False
+        arg=arg.split('-')
+        if len(arg) != 5:
+            print(arg)
+            return False
+        return True
+
 
     def setUp(self):
         '''initialization values'''
@@ -46,8 +159,22 @@ class TestData(unittest.TestCase):
 
                 self.lines.append(j)
 
-        def test_quality_of_data(self):
-            pass
+    def test_quality_of_data(self):
+        for line in self.lines:
+            self.assertTrue(self.action_test(line['eventBody']['action']))
+            self.assertTrue(self.action_source_test(line['eventBody']['actionSource']))
+            self.assertTrue(self.space_used_test(line['eventBody']['spaceUsed']))
+            self.assertTrue(self.target_creation_time_test(line['eventBody']['targetCreationTime']))
+            self.assertTrue(self.target_file_check_sum_test(line['eventBody']['targetFileChecksum']))
+            self.assertTrue(self.target_post_time_test(line['eventBody']['targetPostedTime']))
+            self.assertTrue(self.target_storage_type_test(line['eventBody']['targetStorageType']))
+            self.assertTrue(self.user_id_test(line['eventBody']['userId']))
+            self.assertTrue(self.event_category_test(line['eventHeader']['eventCategory']))
+            self.assertTrue(self.event_id_test(line['eventHeader']['eventId']))
+            self.assertTrue(self.time_stamp_test(line['eventHeader']['timeStamp']))
+            self.assertTrue(self.user_agent_test(line['eventHeader']['userAgent']))
+            self.assertTrue(self.work_group_id_test(line['eventHeader']['workgroupID']))
+
 
 
 if __name__=="__main__":
