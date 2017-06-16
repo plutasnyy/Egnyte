@@ -25,7 +25,7 @@ class Actions_of_most_activity_group(Chart):
                 self.data_dict[group]={}
             self.data_dict[group][action]=1
 
-    def select_most_popular(self,number):
+    def select_most_popular(self,number): #TODO this can be in meta class
         def count(group):
             return sum(self.data_dict[group].values())
         self.groups=sorted(self.groups,key=lambda x:count(x),reverse=True)[:number]
