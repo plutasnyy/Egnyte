@@ -5,14 +5,16 @@ class Data():
     '''class downloading line by line all data from files,
     and sending information to observer'''
     def __init__(self,observer=None):
+        self.number_files=33
+        self.path='out/FSE_'
         if observer is None:
             raise SyntaxError("Data must have the observer")
         else:
             self.observer=observer
 
     def read_data(self):
-        for j in range(0,34):
-            for i in open('out/FSE_'+str(j), 'r'):
+        for j in range(0,self.number_files+1):
+            for i in open(self.path+str(j), 'r'):
                 new_line=json.loads(i)
                 self.observer.send_information(new_line)
         self.observer.send_finnally_information()

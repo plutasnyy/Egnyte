@@ -24,10 +24,10 @@ class Quantity_of_actions_with_source(Chart):
                 self.data_dict[action]={}
             self.data_dict[action][source]=1
 
-    def select_3_most_popular(self):
+    def select_most_popular(self,number):
         def count(action):
             return sum(self.data_dict[action].values())
-        self.actions=sorted(self.actions,key=lambda x:count(x),reverse=True)[:3]
+        self.actions=sorted(self.actions,key=lambda x:count(x),reverse=True)[:number]
 
     def quantity_of_source(self,action):
         quantity=[]
@@ -36,9 +36,9 @@ class Quantity_of_actions_with_source(Chart):
         return quantity
 
     def print_chart(self):
-        self.select_3_most_popular()
+        self.select_most_popular(3)
         ind=range(1,len(self.sources)+1)
-        x=plt.title("Chart three most popular actions by sources")
+        x=plt.title("Three most popular actions by sources")
         plt.xticks(ind,self.sources, rotation='vertical')
         plt.margins(0.02)
         plt.subplots_adjust(bottom=0.45)
@@ -50,5 +50,5 @@ class Quantity_of_actions_with_source(Chart):
 
         plt.legend((p1[0], p2[0],p3[0]), self.actions)
         plt.ylim(0,1000000)#to change
-        plt.savefig('Char_actions_by_source.jpg',dpi=300)
+        plt.savefig('Chart actions by source.jpg',dpi=300)
         plt.clf()

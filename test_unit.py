@@ -6,6 +6,7 @@ from observer import *
 from data import *
 from chart_quantity_of_actions import *
 from chart_quantity_of_actions_with_source import *
+from chart_actions_most_activity_group import *
 
 class Downloader():
     '''secondary class'''
@@ -96,7 +97,7 @@ class TestDataClass(unittest.TestCase):
         self.assertTrue(hasattr(self.data,'return_json_file'))
 
     def test_return_data_excpt(self):
-        self.assertRaises(FileNotFoundError, self.data.return_json_file('lol'))
+        self.assertRaises(FileNotFoundError, self.data.return_json_file('lalal'))
 
 
 class TestInheritance(unittest.TestCase):
@@ -110,6 +111,11 @@ class TestInheritance(unittest.TestCase):
         self.assertTrue(
             issubclass(Quantity_of_actions_with_source,Chart)
             )
-            
+
+    def test_chart_actions_of_most_activity_group(self):
+        self.assertTrue(
+            issubclass(Actions_of_most_activity_group,Chart)
+            )
+
 if __name__=="__main__":
     unittest.main()
