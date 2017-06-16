@@ -1,9 +1,9 @@
-from chart import *
+from chart_quantity_of_actions import *
 from observer import *
 from data import *
 
 def add_charts(charts_list):
-    charts_list.append(First())
+    charts_list.append(Quantity_of_actions())
 
 def add_observers(charts_list,observer):
     for chart in charts_list:

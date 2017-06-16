@@ -8,6 +8,7 @@ class Quantity_of_actions(Chart):
 
     def update(self,new_line):
         action=new_line['eventBody']['action']
+        print(action)
         self.data_dict[action]=self.data_dict.get(action,0)+1
 
     def print_chart(self):
