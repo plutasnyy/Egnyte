@@ -5,6 +5,7 @@ from chart_abstract import *
 from observer import *
 from data import *
 from chart_quantity_of_actions import *
+from chart_quantity_of_actions_with_source import *
 
 class Downloader():
     '''secondary class'''
@@ -105,5 +106,10 @@ class TestInheritance(unittest.TestCase):
             issubclass(Quantity_of_actions, Chart)
             )
 
+    def test_chart_quantity_actions_with_source(self):
+        self.assertTrue(
+            issubclass(Quantity_of_actions_with_source,Chart)
+            )
+            
 if __name__=="__main__":
     unittest.main()
